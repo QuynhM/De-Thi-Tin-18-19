@@ -1,0 +1,31 @@
+def beauty(n):
+  def is_prime(num):
+    if num == 0: return False
+    if num == 1: return False
+    i=2
+    while i*i<=num:
+      if num % i == 0:
+          return False
+      i+=1
+    return True
+  
+  count = 0
+  for i in range(11,100000):
+    sum_s = 0
+    for s in str(i):
+      sum_s += int(s)**2
+    if is_prime(sum_s):
+      count+=1 
+    if count == n:
+      return i
+
+Một số nguyên dương được gọi là số đẹp nếu tổng bình phương các chữ số của nó (trong dạng biểu diễn thập phân) là một số nguyên tố.
+Ví dụ. 12 là số đẹp vì 12 + 22 = 5 là số nguyên tố.
+Trong dãy số đẹp được đánh số theo thứ tự tăng dần của giá trị, bắt đầu từ 1.
+Yêu cầu: Cho số nguyên dương n (1≤𝑛≤100000). Hãy tìm số đẹp thứ n.
+Dữ liệu: Vào từ file văn bản BEAUTY.INP gồm nhiều dòng, mỗi dòng là một bộ kiểm thử chứa một số nguyên dương n.
+Kết quả: Ghi ra file văn bản BEAUTY.OUT ghi kết quả của mỗi bộ kiểm thử, mỗi bộ được ghi trên một dòng.
+
+ex: n = 6  output: 23
+    n = 10 output: 38
+    n = 1  output: 11
