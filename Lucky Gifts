@@ -1,0 +1,29 @@
+from collections import Counter
+def phat_thuong(gift, k):
+  c=Counter(gift)
+  res=0
+  for key in c:
+    if (k-key) in c:
+      res += c[key] *c[k-key]
+      
+  return res//2
+
+gift = [3,2,6,3,7,1,4,5]
+k = 5
+print(phat_thuong(gift, k))
+
+
+
+Thầy Nam có N phần quà cho N thí sinh dự thi kì thi học sinh giỏi lớp 9 năm nay. 
+Trên hộp quà thứ i có ghi số nguyên ai. Sau khi tặng quà cho các thí sinh, thầy Nam có thêm những phần quà may mắn 
+cho mỗi cặp thí sinh có cặp số trên hộp quà là ai, aj (i≠j) sao cho |ai+ aj|= K với K là một số cho trước.
+
+Yêu cầu: Hãy cho biết thầy Nam phải chuẩn bị bao nhiêu phần quà may mắn.
+
+Dữ liệu: Vào từ tệp văn bản LUCKY.INP gồm hai dòng:
+- Dòng 1: Gồm 2 số N và K;
+- Dòng 2: Gồm N số là các phần tử trong dãy, các phần tử cách nhau bởi dấu cách.
+
+Kết quả: Ghi ra tệp văn bản LUCKY.OUT
+
+Gồm 1 dòng duy nhất ghi số lượng cặp số may mắn
